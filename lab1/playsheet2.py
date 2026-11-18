@@ -1,0 +1,5 @@
+x = int(input("Enter your number: "))
+print(x)
+y = int(input("Enter your number: "))
+print(y)
+print(x+y)

@@ -1,0 +1,42 @@
+import weatherdesk
+city_name=input()
+base_price=float(input())
+orders_last_hour=int(input())
+riders_online=int(input())
+temp, rain = weatherdesk.weather_now("city_name")
+surge=1.0
+reason=""
+if temp or rain ==-1.0:
+    print("could not reach sky.... either service is down or city name is not supported")
+
+pressure = orders_last_hour / riders_online
+
+
+if  rain > 0 and pressure > 3 :
+    surge=1.5
+    reason=" raining AND every rider is buried in orders"
+elif  rain > 0 and pressure > 3 :
+    surge=1.3
+    reason= "raining - fewer riders want to go out"
+elif  temp >= 33 and pressure > 3 :
+    surge=1.4
+    reason= "heat wave AND riders are stretched thin"
+elif temp >= 33 :
+    surge=1.2
+    reason= "heat wave - nobody wants to step outside"
+elif  pressure > 4 :
+    surge=1.25
+    reason= "dry and pleasant, but demand is running ahead of riders"
+else:
+    surge=1.0
+    reason="calm hour - charge the normal price"
+
+
+print("Temperature:", round(temp,2))
+print("Rain:", rain)
+print("Orders per rider:", pressure)
+print("Surge:", surge)
+print("Reason:",reason)
+final_price = base_price * surge
+print("Price:", round(final_price,2))
+

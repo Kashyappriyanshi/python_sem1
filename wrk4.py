@@ -1,0 +1,21 @@
+# n=int(input())
+
+# if n%2==0:
+#     print("even")
+# else: print("odd")
+# n=int(input())
+# print("the last digit is:", n%10)
+# n=int(input())
+# print("time:", (n+10)%12, "o'clock")
+# print("a", "b",sep="-", end="...")
+# print("a\tb")
+# n=2
+# print(type(n))
+# print("hello" -"ello")
+# print("hello" /2)
+# print("123"=4)
+# print("4"==4)
+# print([1,2]+[3,4])
+# print([1,2]*3)
+print(int("1010",2))
+print(int("11111",2))
